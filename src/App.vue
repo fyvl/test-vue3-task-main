@@ -36,7 +36,6 @@
       await axios
         .get('https://fakestoreapi.com/products')
         .then((res) => (firstList.value = res.data));
-      console.log('getAllCards - успешно');
     } catch (error) {
       console.log(error);
       alert('Упс! Ошибка получения данных ;(');

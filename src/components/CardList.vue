@@ -5,7 +5,7 @@
   @dragover.prevent
   @dragenter.prevent>
 
-    <SortPanel @sort="sortCards" />
+    <SortPanel :options="props.options"/>
 
     <div class="title">
       <h2>
@@ -132,17 +132,6 @@
       case 3:
         lastList.value = cards.value;
         break;
-    }
-  }
-
-  function sortCards(order) {
-    getLocalCards();
-    if (order === 'asc') {
-      cards =  cards.value.sort((a, b) => a.rating.rate - b.rating.rate);
-    } else if (order === 'desc') {
-      cards =  cards.value.sort((a, b) => b.rating.rate - a.rating.rate);
-    } else if (order === 'none') {
-      cards =  cards.value.sort((a, b) => a.id - b.id);
     }
   }
 </script>
